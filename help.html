@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda" />
+    <style>
+        body {
+            background: #fafafa;
+            margin: 0;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        .q,
+        .a {
+            background: #fff;
+            font-family: Cabin;
+        }
+
+        .a {
+            padding: 0px 5vw;
+            margin-bottom: 5vh;
+            box-shadow: 0px 4px 9px lightgrey;
+            height: 0px;
+            color: transparent;
+            overflow: auto;
+            transition-duration: 0.8s;
+        }
+
+        .q {
+            padding: 13px 5vw;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 10px 0px 10px 0px #dbdbdb;
+            font-size: 25px;
+        }
+
+        .plus {
+            display: inline-block;
+            transition-duration: 0.6s;
+            position: relative;
+            cursor: pointer;
+            height: 25px;
+            width: 25px;
+            margin-right: 20px;
+            border-radius: 20px;
+        }
+
+        .plus:hover {
+            margin-right: 50px;
+            animation: bounce 0.8s infinite alternate;
+        }
+
+        .plus img {
+            height: 100%;
+            width: 100%;
+            transition-duration: 0.8s;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+
+        header {
+            height: 80px;
+            position: absolute;
+            position: fixed;
+            z-index: 2;
+            background: #fff;
+            top: 0px;
+            width: 100vw;
+            box-shadow: 0px 0px 9px lightgrey;
+        }
+
+        .main-header-logo {
+            float: left;
+            height: 80px;
+            width: 80px;
+        }
+
+        .main-header-logo img {
+            height: 100%;
+            width: 100%;
+        }
+
+        nav {
+            margin-top: 30px;
+            margin-left: 6vw;
+        }
+
+        header nav li:last-of-type {
+            display: none;
+        }
+
+        ol a {
+            text-decoration: none;
+            font-family: Cabin;
+            margin: 5px 1.2vw;
+            padding: 2px 5px;
+            color: #000;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s;
+            border: solid 1px transparent;
+        }
+
+        .li_item {
+            border-bottom: solid 1px magenta;
+        }
+
+        ol a:hover {
+            border-bottom: solid 1px magenta;
+        }
+
+        li {
+            display: inline;
+        }
+
+        .question-answer {
+            margin-top: 150px;
+        }
+
+        .welcome-img {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 30px;
+            width: auto;
+            font-family: Merienda;
+            color: mediumaquamarine;
+            font-size: 35px;
+        }
+
+        .front_image {
+            font-family: Cabin;
+            position: relative;
+            text-align: center;
+            height: 20vw;
+            font-size: 8vw;
+        }
+
+        .front_image span {
+            position: absolute;
+            background: linear-gradient(to right, #439AFF 20%, #FFAEFA 45%, #FFB573 55%, #00f000 80%, #00ff00 100%);
+            /* background-image: url(./images/plus.png);*/
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            color: transparent;
+            font-weight: bolder;
+            border: solid 4px transparent;
+            transform: translate(-50%, -50%);
+            -webkit-background-clip: text;
+        }
+
+        .hr {
+            background: linear-gradient(to right, #439AFF 20%, #FFAEFA 45%, #FFB573 55%, #00f000 80%, #00ff00 100%);
+            width: 100%;
+            height: 3px;
+        }
+
+        .not_found {
+            font-family: Cabin;
+            height: 20vh;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0px 0px 16px lightgrey;
+            padding-top: 10px;
+            color: magenta;
+            background: #fff;
+            font-size: 25px;
+
+        }
+
+
+        .not_found a {
+            padding: 3px 10px;
+            transition-duration: 1s;
+            text-decoration: none;
+            border-radius: 40px;
+            color: green;
+            animation: sweller 3s infinite alternate;
+        }
+
+        .not_found a:hover {
+            animation: none;
+        }
+
+        .not_found div {
+            margin: auto;
+            transition-duration: 1s;
+            border: solid 3px lightgrey;
+            width: 140px;
+            border-radius: 20px;
+            padding: 3px;
+        }
+
+        .not_found div:hover {
+            background: lightgrey;
+        }
+
+        @keyframes sweller {
+            0% {
+                color: green;
+            }
+            50% {
+                color: lightgreen;
+            }
+            100% {
+                color: orange;
+            }
+        }
+
+        footer {
+            font-family: Cabin;
+
+            padding: 30px;
+            position: relative;
+            height: 60px;
+            background: #303132;
+            color: #fff;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 30px;
+            width: calc(100% - 60px);
+            border-top: solid 2px grey;
+        }
+
+        .links {
+            margin: auto;
+            position: relative;
+            transition-duration: 0.2s;
+            width: 335px;
+
+            float: right;
+            height: 35px;
+        }
+
+        .links img {
+            margin-left: 20px;
+            transition-duration: 0.2s;
+            height: 100%;
+            float: right;
+            border-radius: 5px;
+            background: #fff;
+            right: 20px;
+            width: auto;
+        }
+
+        .links img:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        .burger {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 5px;
+            background: #06beb6;
+            border-radius: 10px;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .r-nav {
+            position: fixed;
+            top: 0px;
+            width: calc(100vw - 30vw);
+            background: #fff;
+            height: 100%;
+            box-shadow: 0px 0px 10px grey;
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+            transform: translate(-100vw, 0px);
+            display: none;
+            opacity: 0;
+        }
+
+        .r-nav li {
+            display: block;
+            width: fit-content;
+            padding: 15px;
+        }
+
+        @media (max-width: 640px) {
+            header nav li {
+                display: none;
+            }
+            .front_image {
+                top: -30px;
+                font-size: 8vw;
+                white-space: nowrap;
+            }
+            .q {
+                font-size: 18px;
+            }
+            header nav li:last-of-type {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                display: inline;
+                vertical-align: middle;
+            }
+            header,
+            .main-header-logo {
+                height: 60px;
+            }
+            .welcome-img {
+                font-size: 5.5vw;
+                margin-right: 100px;
+                left: 66px;
+            }
+            .text {
+                width: 100%;
+            }
+            .text b {
+                font-size: 2em;
+            }
+            .text .desc {
+                font-size: 0.9em;
+            }
+            .links {
+                position: relative;
+                float: none;
+                display: block;
+                width: 190px;
+                margin: auto;
+                padding: 15px 0px;
+            }
+            .links img {
+                margin: 0px;
+                margin-right: 15px;
+            }
+            footer {
+                text-align: center;
+                padding: 10px;
+                height: auto;
+            }
+            .copyright {
+                position: static;
+                border: none;
+            }
+            .r-nav {
+                transition-duration: 0.8s;
+                z-index: 10;
+                display: block !important;
+            }
+            .r-nav nav {
+                margin-left: 0px !important;
+            }
+            .r-nav ol {
+                padding-left: 0px !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="main-header-logo">
+            <img src="./images/coloredLogo.svg" alt="logo">
+        </div>
+        <nav>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="li_item" href="#">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li>
+                    <a>
+                        <div class="burger" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="welcome-img">
+            <span>Local Share</span>
+        </div>
+
+    </header>
+
+    <div class="r-nav">
+        <nav>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="li_item">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="question-answer">
+
+        <div class="front_image">
+            <span>Have a doubt, check here <div class="hr"></div></span>
+        </div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(1)"> <img class="plus_img" src="./images/plus.png" /> </div> What is local share?</div>
+        <div class="a">Local Share is an data sharing software within a LAN(Local Area Network) supporting android, Linux and windows platforms.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(2)"> <img class="plus_img" src="./images/plus.png" /> </div> While in sending mode, my friend was not visible on the list?</div>
+        <div class="a">Even if you are sending over a LAN and your friend is not visible it can be either due: <br>1. Your friend may be receiving using his own hotspot in android phone. <br>2. You and your friend is not on the same subnet. But you can still share data by his/her IP address which is displayed on home screen. Click on 'send using IP' button and enter your friend's ip address.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(3)"> <img class="plus_img" src="./images/plus.png" /> </div> Why is 'send to android' button on Desktop application?</div>
+        <div class="a">When you connect your PC to the android hotspot which is active for recieving file, the device will not be there in online users list. But you can send the file by clicking send to android button.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(4)"> <img class="plus_img" src="./images/plus.png" /> </div>Does this work only over Local Area Network?</div>
+        <div class="a">Along with Local Area Network, you can also use your own hotspot for high speed data transfer.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(5)"> <img class="plus_img" src="./images/plus.png" /> </div> Is sharing using own hotspot was not sufficient?</div>
+        <div class="a">Sharing using own network do provide high speed but it give less freedom of distance. In today's world most of the institutions and offices are planted with Local Network Connectivity which connect them always. This application targets to those type of users also.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(6)"> <img class="plus_img" src="./images/plus.png" /> </div> Can I share over different subnets?</div>
+        <div class="a">If the subnets are part of the same Local Network then you can send by 'Send using IP' button.</div>
+
+        <div class="q">
+            <div class="plus" onclick="rotate(7)"> <img class="plus_img" src="./images/plus.png" /> </div> What is jar distribution in downloads ? </div>
+        <div class="a">To run jar file, you must have java run time environment (jre or jdk) intalled on your PC and and must support JavaFx. This distribution needs no installation and it is of very less size. </div>
+
+    </div>
+
+
+    <div class="not_found">
+        Got more questions, <br>
+        <div><a href="feedback.html">send to us</a></div>
+    </div>
+
+    <footer>
+        Prominent group creation
+
+        <div class="links">
+            <a href="https://www.facebook.com/Prominent-Group-356495371431010/" target="_blank"><img src="./images/facebook.svg"/></a>
+            <a href="#"><img src="./images/playstore.png"/></a>
+        </div>
+
+
+        <div class="copyright"> &copy; copyright 2017
+        </div>
+    </footer>
+
+
+    <script>
+        var description1 = document.querySelector(".description1");
+        var frame1 = document.querySelector(".frame1");
+        var description2 = document.querySelector(".description2");
+        var frame2 = document.querySelector(".frame2");
+
+        flag = [0, 0, 0, 0, 0, 0, 0];
+
+        function rotate(a) {
+            var index = a - 1;
+
+            var plus = document.querySelectorAll(".plus_img")[index];
+            var answer = document.querySelectorAll(".a")[index];
+
+            if (flag[index] == 0) {
+                answer.style.height = "120px";
+                answer.style.padding = "10px 12vw";
+                answer.style.color = "black";
+                plus.style.transform = "rotate(405deg)";
+                flag[index] = 1;
+            } else {
+                answer.style.height = "0px";
+                answer.style.padding = "0px 5vw";
+                answer.style.color = "transparent";
+                plus.style.transform = "rotate(0deg)";
+                flag[index] = 0;
+            }
+        }
+
+        function fun() {
+            frame1.style.marginLeft = "10%";
+            frame1.style.opacity = "1";
+            description1.style.right = "10%";
+            description1.style.opacity = "1";
+
+            description2.style.marginLeft = "10%";
+            description2.style.opacity = "1";
+            frame2.style.right = "10%";
+            frame2.style.opacity = "1";
+        }
+
+        rNavtoggler = 0;
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            var rNav = document.querySelector(".r-nav");
+            if (rNavtoggler == 0) {
+                rNavtoggler = 1;
+                rNav.style.transform = "translate(0,0)";
+                rNav.style.opacity = "1";
+            } else {
+                rNavtoggler = 0;
+                rNav.style.transform = "translate(-100vw, 0px)";
+                rNav.style.opacity = "0";
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

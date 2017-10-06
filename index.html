@@ -1,0 +1,274 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Local Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <style>
+        .loading {
+            color: black;
+            background: white;
+            height: 10vw;
+            margin-top: 30vh;
+            width: 10vw;
+            border-radius: 100px;
+            box-shadow: 0px 0px 15px black;
+            animation: anim 1.5s infinite cubic-bezier(.69, .66, .42, .88);
+        }
+
+        @keyframes anim {
+            0% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+
+        .loading span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: Cabin;
+            transform: translate(-50%, -50%);
+        }
+
+        .burger {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 5px;
+            background: #06beb6;
+            border-radius: 10px;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+            /*Assign dropcaps class to the paragraph for which the effect is to be applied */
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .r-nav {
+            position: fixed;
+            top: 0px;
+            width: calc(100vw - 30vw);
+            background: #fff;
+            height: 100%;
+            box-shadow: 0px 0px 10px grey;
+            max-height: 100vh;
+            padding: 10px;
+            overflow: auto;
+            text-align: center;
+            transform: translate(-100vw, 0px);
+            opacity: 0;
+            display: none;
+        }
+
+        .r-nav li {
+            display: block;
+            width: fit-content;
+            padding: 15px;
+            padding-left: 0px;
+        }
+
+        .r-nav ol {
+            padding-left: 0px !important;
+        }
+
+        .r-nav nav {
+            margin-left: 0px !important;
+        }
+
+    </style>
+</head>
+
+<body onload="fun2(); setvisibler();">
+    <header>
+        <div class="main-header-logo"> <img src="./images/coloredLogo.svg" alt="logo"> </div>
+        <nav>
+            <ol>
+                <li><a class="li_item" href="#">Home</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li>
+                    <a>
+                        <div class="burger" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+        <div class="welcome-img"> <span>Local Share</span> </div>
+    </header>
+    <div class="content">
+        <div class="text-container">
+            <div class="text"> <b>Local&nbsp;Share</b>
+                <div class="hr"></div>
+                <span class="desc">Smartest file sharing app</span> <br>
+                <br>
+                <br>
+                <a href="#download_div" onclick="opener();" class="download_button">Download</a> </div>
+        </div>
+    </div>
+    <div class="r-nav">
+        <nav>
+            <ol>
+                <li><a class="li_item">Home</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="floater">
+        <div class="floater_downloader">
+            <div class="select_platform">
+                <div class="pan"> Select your platform</div>
+                <br>
+                <div class="pan"> <a class="d_btn" href="#">Android</a> <a class="d_btn" href="./resources/Local_Share-setup.zip" onclick="sendMyCount('windows');">Windows</a> <a class="d_btn" href="./resources/Local_Share.tar.gz" onclick="sendMyCount('linux'); ">Linux</a> </div>
+                <div class="pan">Portable Version</div>
+                <div class="pan"> <a class="d_btn" href="./resources/Local_Share.jar" onclick="sendMyCount('jar'); ">Jar distribution</a> </div>
+            </div>
+            <div class="cross" onclick="closer();"> <img src="./images/cross.png" alt="Close" /> </div>
+        </div>
+    </div>
+    <center>
+        <div class="loading"> <span>loading...</span> </div>
+    </center>
+    <div class="container">
+        <div class="frame frame1">
+            <iframe width="377" height="667" src="https://xd.adobe.com/embed/5340d756-9448-4be1-838c-e6df47b09039" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="description description1"> click on the buttons to see app in motion Interact with your virtual app without downloading. </div>
+    </div>
+    <div class="container">
+        <div class="description description2"> click on the buttons to see app in motion Interact with your virtual app without downloading. </div>
+        <div class="frame frame2">
+            <iframe src="https://xd.adobe.com/embed/6daec4fe-939a-4dac-86e6-af7648324a9d" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer> Prominent group creation
+        <div class="links"> <a href="https://www.facebook.com/Prominent-Group-356495371431010/" target="_blank"><img src="./images/facebook.svg"/></a> <a href="#"><img src="./images/playstore.png"/></a> </div>
+        <div class="copyright"> &copy; copyright 2017 </div>
+    </footer>
+    <script>
+        var description1 = document.querySelector(".description1");
+        var frame1 = document.querySelector(".frame1");
+        var description2 = document.querySelector(".description2");
+        var frame2 = document.querySelector(".frame2");
+
+        container = document.querySelectorAll(".container");
+
+        container[0].style.overflow = "hidden";
+        container[0].style.height = "0px";
+        container[0].style.padding = "0px";
+        container[1].style.padding = "0px";
+        container[1].style.height = "0px";
+        container[1].style.overflow = "hidden";
+
+        function fun2() {
+
+            container[0].style.height = "70vh";
+            container[1].style.height = "70vh";
+
+            container[0].style.padding = "1%";
+            container[1].style.padding = "1%";
+            var loading = document.querySelector(".loading");
+            loading.parentNode.removeChild(loading);
+        }
+
+        function setvisibler() {
+            frame1.style.marginLeft = "10%";
+            frame1.style.opacity = "1";
+            description1.style.right = "10%";
+            description1.style.opacity = "1";
+
+            description2.style.marginLeft = "5%";
+            description2.style.opacity = "1";
+            frame2.style.right = "5%";
+            frame2.style.opacity = "1";
+        }
+
+        function fun() {
+            var hr = document.querySelector(".hr");
+            hr.style.transitionDuration = "1s";
+            hr.style.width = "70vw";
+        }
+        fun();
+
+        function closer() {
+
+            var floater = document.querySelector(".floater");
+            floater.style.transitionDuration = "0.6s";
+            floater.style.opacity = "0";
+
+            setTimeout(function() {
+                floater.style.visibility = "hidden";
+                floater.zIndex = "-2";
+            }, 400);
+        }
+
+        function opener() {
+            var floater = document.querySelector(".floater");
+            floater.style.transitionDuration = "0.4s";
+            floater.style.zIndex = "2";
+            floater.style.visibility = "visible";
+            floater.style.opacity = "1";
+        }
+
+        function sendMyCount(type) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+               }
+            };
+            xhttp.open("GET", "https://localshare.000webhostapp.com/downloadcounter.php?platform=" + type, true);
+            xhttp.send(); 
+        }
+        rNavtoggler = 0;
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            var rNav = document.querySelector(".r-nav");
+            if (rNavtoggler == 0) {
+                rNavtoggler = 1;
+                rNav.style.transform = "translate(0,0)";
+                rNav.style.opacity = "1";
+            } else {
+                rNavtoggler = 0;
+                rNav.style.transform = "translate(-100vw, 0px)";
+                rNav.style.opacity = "0";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+html.body {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    width: 100vw;
+    background: url("./../images/background.svg");
+    background-size: cover;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+input {
+    font-family: Cabin;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    /*background: rgba(79, 55, 48, 0.4);*/
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-left: 5px;
+    height: 30px;
+    box-shadow: 0vh 0vh 1vh 0.2vh lightgreen;
+}
+
+textarea {
+    padding: 6px 10px;
+    resize: none;
+    margin-top: 2vh;
+    color: black;
+    font-family: Cabin;
+    width: 100%;
+    border: none;
+    /*background: rgba(79, 55, 48, 0.4);*/
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    box-shadow: 0vh 0vh 1vh 0.2vh lightgreen;
+}
+
+select {
+    margin-bottom: 2vh;
+    height: 5vh;
+    margin-top: 2vh;
+    /*background: rgba(79, 55, 48, 0.4);*/
+    color: black;
+    font-family: Cabin;
+    box-shadow: 0vh 0vh 1vh 0.1vh lightgreen;
+}
+
+option {
+    color: black;
+    font-family: Cabin;
+    /*background: rgba(79, 55, 48, 0.4);*/
+}
+
+input[type=button] {
+    font-family: Cabin;
+    width: 50%;
+    min-width: 100px;
+    text-align: center;
+    /*background: linear-gradient(to right, #439AFF 20%, #FFAEFA 45%, #FFB573 55%, #00f000 80%, #00ff00 100%);*/
+    background: #03a9f4;
+    color: #fff;
+    font-size: 18px;
+    /*border: solid 2px lightcoral;*/
+    border-radius: 15px;
+}
+
+#alertMessage {
+    position: absolute;
+    transition-duration: 1s;
+    left: 50%;
+    height: auto;
+    font-family: Cabin;
+    width: 40vw;
+    position: fixed;
+    text-align: center;
+    bottom: -70px;
+    color: green;
+    padding: 8px 40px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 6px lightgreen;
+    border: solid 3px lightgreen;
+    border-radius: 10px;
+    transform: translate(-50%, 0);
+    z-index: 300;
+}
+
+header {
+    height: 80px;
+    position: absolute;
+    position: fixed;
+    z-index: 2;
+    background: #fff;
+    top: 0px;
+    width: 100vw;
+    box-shadow: 0px 0px 9px lightgrey;
+}
+
+.main-header-logo {
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+
+.main-header-logo img {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    margin-top: 30px;
+    margin-left: 6vw;
+}
+
+ol a {
+    text-decoration: none;
+    font-family: Cabin;
+    margin: 5px 1.2vw;
+    padding: 2px 5px;
+    color: #000;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    border: solid 1px transparent;
+}
+
+.li_item {
+    border-bottom: solid 1px magenta;
+}
+
+ol a:hover {
+    border-bottom: solid 1px magenta;
+}
+
+li {
+    display: inline;
+}
+
+.welcome-img {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 30px;
+    width: auto;
+    font-family: Merienda;
+    color: mediumaquamarine;
+    font-size: 35px;
+}
+
+.mydiv {
+
+    font-family: Cabin;
+    margin: auto;
+    margin-top: 100px;
+    width: 30vw;
+}
+
+footer {
+    font-family: Cabin;
+    margin-top: 20px;
+    padding: 30px;
+    position: relative;
+    height: 60px;
+    background: #303132;
+    color: #fff;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 30px;
+    width: calc(100% - 60px);
+    border-top: solid 2px grey;
+}
+
+.links {
+    margin: auto;
+    position: relative;
+    transition-duration: 0.2s;
+    width: 335px;
+    float: right;
+    height: 35px;
+}
+
+.links img {
+    margin-left: 20px;
+    transition-duration: 0.2s;
+    height: 100%;
+    float: right;
+    border-radius: 5px;
+    background: #fff;
+    right: 20px;
+    width: auto;
+}
+
+.links img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+
+header nav li:last-of-type {
+    display: none;
+}
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 5px;
+    background: #06beb6;
+    border-radius: 10px;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.r-nav {
+    position: fixed;
+    top: 0px;
+    width: calc(100vw - 30vw);
+    background: #fff;
+    height: 100%;
+    box-shadow: 0px 0px 10px grey;
+    padding: 10px;
+    overflow: hidden;
+    text-align: center;
+    transform: translate(-100vw, 0px);
+    display: none;
+    opacity: 0;
+}
+
+.r-nav li {
+    display: block;
+    width: fit-content;
+    padding: 15px;
+}
+
+@media (max-width: 640px) {
+    body {
+        background: #28c !important;
+    }
+    header nav li {
+        display: none;
+    }
+    header nav li:last-of-type {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: inline;
+        vertical-align: middle;
+    }
+    header,
+    .main-header-logo {
+        height: 60px;
+    }
+    .welcome-img {
+        font-size: 5.5vw;
+        margin-right: 100px;
+        left: 66px;
+    }
+    .text {
+        width: 100%;
+    }
+    .text b {
+        font-size: 2em;
+    }
+    .text .desc {
+        font-size: 0.9em;
+    }
+    .links {
+        position: relative;
+        float: none;
+        display: block;
+        width: 190px;
+        margin: auto;
+        padding: 15px 0px;
+    }
+    .links img {
+        margin: 0px;
+        margin-right: 15px;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        height: auto;
+    }
+    .copyright {
+        position: static;
+        border: none;
+    }
+    .r-nav {
+        transition-duration: 0.8s;
+        z-index: 10;
+        display: block !important;
+    }
+    .r-nav nav {
+        margin-left: 0px !important;
+    }
+    .r-nav ol {
+        padding-left: 0px !important;
+    }
+    .r-nav li {
+        padding-left: 0px !important;
+    }
+    .mydiv {
+        width: 60%;
+    }
+
+}

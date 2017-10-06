@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback Form</title>
+    <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda" />
+    <link rel="stylesheet" type="text/css" href="./css/feedback.css">
+</head>
+
+<body>
+    <header>
+        <div class="main-header-logo">
+            <img src="./images/coloredLogo.svg" alt="logo">
+        </div>
+        <nav>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="#" class="li_item">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+                <li>
+                    <a>
+                        <div class="burger" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+        <div class="welcome-img">
+            <span>Local Share</span>
+        </div>
+    </header>
+    <div class="r-nav">
+        <nav>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a class="li_item">Feedback</a></li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div id="container">
+
+        <div id="formdiv" class="mydiv">
+            <h1>
+                <center> Feedback</center>
+            </h1>
+            <form id="myForm">
+                <label for="name">Your Name:</label><br>
+                <input id="name" type="text" name="name" required><br>
+                <label for="email">Your email: </label><br>
+                <input id="email" type="email" name="email" required><br>
+                <label for="subject"> Subject</label><br>
+                <select id="subject" name="subject">
+					<option>--Select--</option>
+					<option>Improvement</option>
+					<option>Bug</option>
+					<option>Query</option>
+					<option>Suggestion</option>
+				</select><br>
+                <label for="message">Message:</label><br>
+                <textarea value="" id="message" name="query" rows="7" cols="60" placeholder="Enter your message here...." required></textarea><br>
+                <center><input type="button" name="submit" value="Submit" onclick="submitForm();"></center>
+            </form>
+        </div>
+    </div>
+    <div id="alertMessage">
+        Thank you for feedback...
+    </div>
+    <footer>
+        Prominent group creation
+
+        <div class="links">
+            <a href="https://www.facebook.com/Prominent-Group-356495371431010/" target="_blank"><img src="./images/facebook.svg"/></a>
+            <a href="#"><img src="./images/playstore.png"/></a>
+        </div>
+
+        <div class="copyright"> &copy; copyright 2017
+        </div>
+    </footer>
+
+    <script>
+        rNavtoggler = 0;
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            var rNav = document.querySelector(".r-nav");
+            if (rNavtoggler == 0) {
+                rNavtoggler = 1;
+                rNav.style.transform = "translate(0,0)";
+                rNav.style.opacity = "1";
+            } else {
+                rNavtoggler = 0;
+                rNav.style.transform = "translate(-100vw, 0px)";
+                rNav.style.opacity = "0";
+            }
+        }
+
+        function submitForm() {
+            var name = document.querySelector("#name");
+            var email = document.querySelector("#email");
+            var subject = document.querySelector("#subject");
+            var message = document.querySelector("#message");
+            var alertMessage = document.querySelector("#alertMessage");
+            var form = document.querySelector("#myForm");
+            if (name.checkValidity() == false) {
+                alertMessage.innerHTML = "Please input your name";
+                alertMessage.style.bottom = "5px";
+                name.focus();
+                setTimeout(function() {
+                    alertMessage.style.bottom = "-70px";
+                }, 1800);
+                return;
+            }
+            if (email.checkValidity() == false) {
+                if (email.validationMessage.indexOf('@') > -1)
+                    alertMessage.innerHTML = "Enter a valid email";
+                else
+                    alertMessage.innerHTML = "Please input your email";
+                alertMessage.style.bottom = "5px";
+                email.focus();
+                setTimeout(function() {
+                    alertMessage.style.bottom = "-70px";
+                }, 1800);
+                return;
+            }
+            if (subject.value == "--Select--") {
+                alertMessage.innerHTML = "Please choose a subject";
+                alertMessage.style.bottom = "5px";
+                subject.focus();
+                setTimeout(function() {
+                    alertMessage.style.bottom = "-70px";
+                }, 1800);
+                return;
+            }
+            if (message.checkValidity() == false) {
+                alertMessage.innerHTML = "Please enter your message";
+                alertMessage.style.bottom = "5px";
+                message.focus();
+                setTimeout(function() {
+                    alertMessage.style.bottom = "-70px";
+                }, 1800);
+                return;
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    alertMessage.style.bottom = "5px";
+                    alertMessage.innerHTML = "Thanks for your feedback ...";
+                    form.reset();
+                    setTimeout(function() {
+                        alertMessage.style.bottom = "-70px";
+                    }, 2500);
+                }
+            };
+            xhttp.open("POST", "https://localshare.000webhostapp.com/mailLocalShare.php?", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("submit=submit&name=" + name.value + "&email=" + email.value + "&subject=" + subject.value + "&query=" + message.value);
+        }
+
+    </script>
+
+</body>
+
+</html>
