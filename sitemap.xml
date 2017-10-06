@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://localshare.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/resources/Local_Share.jar</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/help.html</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/index.html</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/resources/Local_Share-setup.zip</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/feedback.html</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/resources/Local_Share.tar.gz</loc>
+  </url>
+  <url>
+    <loc>https://localshare.github.io/aboutUs.html</loc>
+  </url>
+</urlset>
+<!--<guid value="dd6d2636-a4d1-477a-b61a-08c3063472b9" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
